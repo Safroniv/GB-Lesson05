@@ -1,0 +1,14 @@
+﻿using System;
+
+namespace JobLesson05Part02
+{
+    internal class Program
+    {
+        //Урок 5 Задание 2
+        //Написать программу, которая при старте дописывает текущее время в файл «startup.txt».
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+        }
+    }
+}
