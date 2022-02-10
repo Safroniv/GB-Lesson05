@@ -8,9 +8,9 @@ namespace JobLesson05Part02
     {
         //Урок 5 Задание 2
         //Написать программу, которая при старте дописывает текущее время в файл «startup.txt».
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("Hello World!");
+            File.AppendAllText("startup.txt", DateTime.Now.ToShortTimeString());
         }
     }
 }
