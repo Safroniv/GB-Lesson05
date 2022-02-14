@@ -16,21 +16,21 @@ namespace JobLesson05Part04
                 if (Directory.Exists(dirName))
                 {
                     Console.WriteLine("Подкаталоги:");
-                    File.AppendAllText("Stricture.txt", Environment.NewLine + "Подкаталоги:");
+                    File.AppendAllText("Structure.txt", Environment.NewLine + "Подкаталоги:");
                     string[] dirs = Directory.GetDirectories(dirName);
                     foreach (string s in dirs)
                     {
                         Console.WriteLine(s);
-                        File.AppendAllText("Stricture.txt", Environment.NewLine + s);
+                        File.AppendAllText("Structure.txt", Environment.NewLine + s);
                     }
                     Console.WriteLine();
                     Console.WriteLine("Файлы:");
-                    File.AppendAllText("Stricture.txt", Environment.NewLine + Environment.NewLine + "Файлы:");
+                    File.AppendAllText("Structure.txt", Environment.NewLine + Environment.NewLine + "Файлы:");
                     string[] files = Directory.GetFiles(dirName);
                     foreach (string s in files)
                     {
                         Console.WriteLine(s);
-                        File.AppendAllText("Stricture.txt", Environment.NewLine + s);
+                        File.AppendAllText("Structure.txt", Environment.NewLine + s);
                     }
                 }
             //    return TreeOfCategory(dirName);
