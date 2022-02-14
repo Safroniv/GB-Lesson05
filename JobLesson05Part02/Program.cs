@@ -10,7 +10,12 @@ namespace JobLesson05Part02
         //Написать программу, которая при старте дописывает текущее время в файл «startup.txt».
         static void Main()
         {
-            File.AppendAllText("startup.txt", DateTime.Now.ToShortTimeString());
+            //без секунд:
+            File.AppendAllText("startup.txt", Environment.NewLine + DateTime.Now.ToShortTimeString());
+            //или с секундами:
+            File.AppendAllText("startup.txt", Environment.NewLine + DateTime.Now.ToLongTimeString());
+            //или обе строки без секунд и с секундами:
+            File.AppendAllLines("startup.txt", new[] { Environment.NewLine + DateTime.Now.ToShortTimeString(), DateTime.Now.ToLongTimeString() }); 
         }
     }
 }
