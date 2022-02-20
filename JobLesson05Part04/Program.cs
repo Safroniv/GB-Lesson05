@@ -21,46 +21,58 @@ namespace JobLesson05Part04
         //}
         static void Main()
         {
+            
             Console.WriteLine("Структура категорий и файлов в: F:\\CategoryForTree\n");
             File.AppendAllText("Structure.txt", "Структура категорий и файлов в: F:\\CategoryForTree\n");
-            TreeOfCategory();
+            TreeOfCategory(structDirName);
 
         }
-        static string TreeOfCategory()
+
+
+
+        static string TreeOfCategory(string[] path)
         {
             string structDirName = @"F:\CategoryForTree";
-
-            if (Directory.Exists(structDirName))
+            string[] dirs = Directory.GetDirectories(structDirName);
+            for (int i = 0; i < dirs.Length; i++)
             {
-                string[] dirs = Directory.GetDirectories(structDirName);
-                for (int i = 0; i < dirs.Length; i++)
-                {
-                    Console.WriteLine("Категория:" + dirs[i]);
-                    File.AppendAllText("Structure.txt", Environment.NewLine + "Категория:" + dirs[i]);
+                Console.WriteLine("Подкатегория:" + dirs[i]);
+                File.AppendAllText("Structure.txt", Environment.NewLine + "Подкатегория:" + dirs[i]);
 
-                    if (Directory.Exists(dirs[i]))
-                    {
-                        string[] subDirs = Directory.GetDirectories(dirs[i]);
-                        for (int j = 0; j < subDirs.Length; j++)
-                        {
-                            Console.WriteLine("Категория:" + subDirs[j]);
-                            File.AppendAllText("Structure.txt", Environment.NewLine + "Категория:" + subDirs[j]);
-
-                        }
-                    }
-                }
-                string[] files = Directory.GetFiles(structDirName);
-                for (int i = 0; i < files.Length; i++)
-                {
-                    Console.WriteLine("Файлы категории:" + files[i]);
-                    File.AppendAllText("Structure.txt", Environment.NewLine + "Файлы категории:" + files[i]);
-
-                }
             }
+
             return structDirName;
         }
     }
 }
+//структура через if
+//if (Directory.Exists(structDirName))
+//{
+//    string[] dirs = Directory.GetDirectories(structDirName);
+//    for (int i = 0; i < dirs.Length; i++)
+//    {
+//        Console.WriteLine("Категория:" + dirs[i]);
+//        File.AppendAllText("Structure.txt", Environment.NewLine + "Категория:" + dirs[i]);
+
+//        if (Directory.Exists(dirs[i]))
+//        {
+//            string[] subDirs = Directory.GetFileSystemEntries(dirs[i]);
+//            for (int j = 0; j < subDirs.Length; j++)
+//            {
+//                Console.WriteLine("Подкатегория или файл:" + subDirs[j]);
+//                File.AppendAllText("Structure.txt", Environment.NewLine + "Подкатегория или Файл:" + subDirs[j]);
+
+//            }
+//        }
+//    }
+//    string[] files = Directory.GetFiles(structDirName);
+//    for (int i = 0; i < files.Length; i++)
+//    {
+//        Console.WriteLine("Файлы категории:" + files[i]);
+//        File.AppendAllText("Structure.txt", Environment.NewLine + "Файлы категории:" + files[i]);
+
+//    }
+//}
 //Формирование структуры для вложений до 3-его уровня включительно
 //static string TreeOfCategory()
 //{
@@ -106,41 +118,4 @@ namespace JobLesson05Part04
 //    }
 //    return structDirName;
 //}
-//Получение файлов и категорий 1-ого уровня
-//static void Main()
-//{
-//    string dirName = null;
-//    string name = TreeOfCategory(dirName);
-//    Console.WriteLine(name);
-//}
-//static string TreeOfCategory(string dirName)
-//{
 
-//    string structDirName = @"F:\CategoryForTree";
-
-//    if (Directory.Exists(structDirName))
-//    {
-//        Console.WriteLine("Подкаталоги:");
-//        File.AppendAllText("Structure.txt", Environment.NewLine + "Подкаталоги:");
-//        string[] dirs = Directory.GetDirectories(structDirName);
-
-//        foreach (string s in dirs)
-//        {
-//            Console.WriteLine(s);
-//            File.AppendAllText("Structure.txt", Environment.NewLine + s);
-
-
-//        }
-//        Console.WriteLine();
-//        Console.WriteLine("Файлы:");
-//        File.AppendAllText("Structure.txt", Environment.NewLine + Environment.NewLine + "Файлы:");
-//        string[] files = Directory.GetFiles(structDirName);
-//        foreach (string s in files)
-//        {
-//            Console.WriteLine(s);
-//            File.AppendAllText("Structure.txt", Environment.NewLine + s);
-//        }
-
-//    }
-//    return structDirName;
-//}
