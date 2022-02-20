@@ -8,14 +8,14 @@ namespace JobLesson05Part04v02
         //Получение файлов и категорий 1-ого уровня
         static void Main()
         {
-            string dirName = null;
+            string dirName = @"F:\CategoryForTree";
             string name = TreeOfCategory(dirName);
             Console.WriteLine(name);
         }
         static string TreeOfCategory(string dirName)
         {
 
-            string structDirName = @"F:\CategoryForTree";
+            string structDirName = dirName;
 
             if (Directory.Exists(structDirName))
             {

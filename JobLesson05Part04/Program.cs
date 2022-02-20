@@ -7,30 +7,35 @@ namespace JobLesson05Part04
     {
         //Урок 5 Задание 4
         //(*) Сохранить дерево каталогов и файлов по заданному пути в текстовый файл — с рекурсией и без.
-
-        //Для рекурсии пример прошлого задания:
-        //int number = 20;
-        //Console.WriteLine(GetFibonacci(number));
-        //static int GetFibonacci(int number)
-        //{
-        //    if (number == 0 || number == 1)
-        //    {return number;}
-        //    return GetFibonacci(number - 1) + GetFibonacci(number - 2);
-        //}
         static void Main()
-        {            
-            Console.WriteLine("Структура категорий и файлов в: F:\\CategoryForTree\n");
-            File.AppendAllText("Structure.txt", "Структура категорий и файлов в: F:\\CategoryForTree\n");
-            TreeOfCategory();
-        }
-        static string TreeOfCategory(string[] path)
         {
-            string structDirName = @"F:\CategoryForTree";
+            Console.WriteLine("Структура категорий и файлов в: F:\\CategoryForTree\n");
+            File.AppendAllText("Structure.txt", Environment.NewLine + "Структура категорий и файлов в: F:\\CategoryForTree" + Environment.NewLine);
+            string path = @"F:\CategoryForTree";
+            string[] dirs = Directory.GetDirectories(path);
+            for (int i = 0; i < dirs.Length; i++)
+            {
+                Console.WriteLine("|" + dirs[i]);
+                File.AppendAllText("Structure.txt", Environment.NewLine + "|" + dirs[i]);
+            }
+            TreeOfCategory(path);
+        }
+
+        static string TreeOfCategory(string path)
+        {
+            string structDirName = path;
             string[] dirs = Directory.GetDirectories(structDirName);
             for (int i = 0; i < dirs.Length; i++)
             {
-                Console.WriteLine("Подкатегория:" + dirs[i]);
-                File.AppendAllText("Structure.txt", Environment.NewLine + "Подкатегория:" + dirs[i]);
+                if (Directory.Exists(dirs[i]))
+                {
+                    string[] subDirs = Directory.GetFileSystemEntries(TreeOfCategory(dirs[i]));
+                    for (int j = 0; j < subDirs.Length; j++)
+                    {
+                        Console.WriteLine("||" + subDirs[j]);
+                        File.AppendAllText("Structure.txt", Environment.NewLine + "||" + subDirs[j]);
+                    }
+                }
             }
             return structDirName;
         }

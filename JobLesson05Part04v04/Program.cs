@@ -6,8 +6,7 @@ namespace JobLesson05Part04v04
     internal class Program
     {
         static void Main()
-        {
- 
+        { 
             Console.WriteLine("Структура категорий и файлов в: F:\\CategoryForTree\n\n");
             File.AppendAllText("Structure.txt", "Структура категорий и файлов в: F:\\CategoryForTree\n"+ Environment.NewLine);
             TreeOfCategory();
