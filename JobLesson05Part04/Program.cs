@@ -14,22 +14,15 @@ namespace JobLesson05Part04
         //static int GetFibonacci(int number)
         //{
         //    if (number == 0 || number == 1)
-        //    {
-        //        return number;
-        //    }
+        //    {return number;}
         //    return GetFibonacci(number - 1) + GetFibonacci(number - 2);
         //}
         static void Main()
-        {
-            
+        {            
             Console.WriteLine("Структура категорий и файлов в: F:\\CategoryForTree\n");
             File.AppendAllText("Structure.txt", "Структура категорий и файлов в: F:\\CategoryForTree\n");
             TreeOfCategory();
-
         }
-
-
-
         static string TreeOfCategory(string[] path)
         {
             string structDirName = @"F:\CategoryForTree";
@@ -38,9 +31,7 @@ namespace JobLesson05Part04
             {
                 Console.WriteLine("Подкатегория:" + dirs[i]);
                 File.AppendAllText("Structure.txt", Environment.NewLine + "Подкатегория:" + dirs[i]);
-
             }
-
             return structDirName;
         }
     }
