@@ -1,12 +1,25 @@
 ﻿using System;
+using System.IO;
 
 namespace JobLesson05Part01
 {
     internal class Program
     {
-        static void Main(string[] args)
+        //Урок 5 Задание 1
+        //Ввести с клавиатуры произвольный набор данных и сохранить его в текстовый файл.
+
+
+        static void Main()
         {
-            Console.WriteLine("Hello World!");
-        }
+            Console.WriteLine("Здравствуйте, введите данные для сохранения в файл:");
+            string inputData = Console.ReadLine();
+            string inputInFile = "text.txt";
+            File.WriteAllText(inputInFile, inputData);
+        }        
+        //public Building(int floors, int entrances)
+        //{
+        //    int Floors = floors;
+        //    int Entrances = entrances;
+        //}
     }
 }
