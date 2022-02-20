@@ -36,33 +36,4 @@ namespace JobLesson05Part04
         }
     }
 }
-//структура через if
-//if (Directory.Exists(structDirName))
-//{
-//    string[] dirs = Directory.GetDirectories(structDirName);
-//    for (int i = 0; i < dirs.Length; i++)
-//    {
-//        Console.WriteLine("Категория:" + dirs[i]);
-//        File.AppendAllText("Structure.txt", Environment.NewLine + "Категория:" + dirs[i]);
-
-//        if (Directory.Exists(dirs[i]))
-//        {
-//            string[] subDirs = Directory.GetFileSystemEntries(dirs[i]);
-//            for (int j = 0; j < subDirs.Length; j++)
-//            {
-//                Console.WriteLine("Подкатегория или файл:" + subDirs[j]);
-//                File.AppendAllText("Structure.txt", Environment.NewLine + "Подкатегория или Файл:" + subDirs[j]);
-
-//            }
-//        }
-//    }
-//    string[] files = Directory.GetFiles(structDirName);
-//    for (int i = 0; i < files.Length; i++)
-//    {
-//        Console.WriteLine("Файлы категории:" + files[i]);
-//        File.AppendAllText("Structure.txt", Environment.NewLine + "Файлы категории:" + files[i]);
-
-//    }
-//}
-
 
