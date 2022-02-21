@@ -1,0 +1,31 @@
+        //string createDirectory = @"F:\TestDir";
+        //Console.WriteLine(Directory.Exists(createDirectory)); // Проверяет, существует ли заданная директория
+
+        //string directoryForNotes = Path.Combine(createDirectory, "Notes"); // "D:\ExampleDir\Notes"
+
+        //Directory.CreateDirectory(directoryForNotes); // Создаем вложенную директорию
+
+        //string textForNotes = "Этот файл создан автоматически";
+
+        //string notePath = Path.Combine(directoryForNotes, "Note 1.txt"); // "D:\ExampleDir\Notes\Note 1.txt"
+
+        //File.WriteAllText(notePath, textForNotes);
+
+        //string copyOfNotePath = Path.Combine(createDirectory, "Copy of Note 1.txt"); // "D:\ExampleDir\Copy of Note 1.txt"
+        //File.Copy(notePath, copyOfNotePath); // Копируем созданную заметку в "D:\ExampleDir\Copy of Note 1.txt"
+
+        //Console.WriteLine(File.Exists(copyOfNotePath)); // Проверяет, существует ли заданный файл
+
+        //File.Move(copyOfNotePath, Path.Combine(directoryForNotes, "Note 2.txt")); // Перемещаем заметку в "D:\ExampleDir\Notes\Note 2.txt"
+
+        //// Создаем директорию "D:\ExampleDir\Documents" и перемещаем в нее директорию Notes
+        //Directory.CreateDirectory(Path.Combine(createDirectory, "Documents"));
+        //Directory.Move(directoryForNotes, Path.Combine(createDirectory, "Documents", "Notes"));
+
+        //// Перечень всех файлов и папок, вложенных в createDirectory
+        //string[] entries = Directory.GetFileSystemEntries(createDirectory, "*", SearchOption.AllDirectories);
+
+        //for (int i = 0; i < entries.Length; i++)
+        //{
+        //    Console.WriteLine(entries[i]);
+        //}
